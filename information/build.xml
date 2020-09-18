@@ -69,6 +69,8 @@
     	<jar destfile="build/WebContent/WEB-INF/lib/info.jar"
     	     basedir="build/classes" />
     	<zip destfile="build/info.ear" basedir="build/WebContent"/>
+    	<delete dir="build/classes"/>
+    	<delete dir="build/WebContent"/>
     </target>
     <target name="build-subprojects"/>
     <target depends="init" name="build-project">
