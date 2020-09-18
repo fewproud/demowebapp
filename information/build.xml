@@ -9,7 +9,9 @@
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="1.8"/>
     <property name="source" value="1.8"/>
-    <path id="Web App Libraries.libraryclasspath"/>
+    <path id="Web App Libraries.libraryclasspath">
+    	<pathelement location="libs/servlet-api.jar"/>
+    </path>
     <path id="EAR Libraries.libraryclasspath"/>
     <path id="Apache Tomcat v8.5 [Apache Tomcat v8.5].libraryclasspath">
         <pathelement location="../../../../../../Shared/apache-tomcat-8.5.57/lib/tomcat-i18n-ko.jar"/>
