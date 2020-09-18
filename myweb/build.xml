@@ -9,7 +9,9 @@
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="1.8"/>
     <property name="source" value="1.8"/>
-    <path id="Web App Libraries.libraryclasspath"/>
+    <path id="Web App Libraries.libraryclasspath">
+    	<pathelement location="libs/servlet-api.jar"/>
+    </path>
     <path id="EAR Libraries.libraryclasspath"/>
     <path id="Apache Tomcat v8.5 [Apache Tomcat v8.5].libraryclasspath">
     </path>
@@ -69,6 +71,8 @@
     	<jar destfile="build/WebContent/WEB-INF/lib/myweb.jar"
     	     basedir="build/classes" />
     	<zip destfile="build/myweb.ear" basedir="build/WebContent"/>
+    	<delete dir="build/classes"/>
+    	<delete dir="build/WebContent"/>
     </target>
     <target name="build-subprojects"/>
     <target depends="init" name="build-project">
