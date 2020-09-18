@@ -68,7 +68,7 @@
     	</copy>
     	<jar destfile="build/WebContent/WEB-INF/lib/info.jar"
     	     basedir="build/classes" />
-    	<zip destfile="build/info.ear" basedir="build/WebContent"/>
+    	<zip destfile="build/info.war" basedir="build/WebContent"/>
     	<delete dir="build/classes"/>
     	<delete dir="build/WebContent"/>
     </target>

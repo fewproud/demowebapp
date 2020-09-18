@@ -70,7 +70,7 @@
     	</copy>
     	<jar destfile="build/WebContent/WEB-INF/lib/myweb.jar"
     	     basedir="build/classes" />
-    	<zip destfile="build/myweb.ear" basedir="build/WebContent"/>
+    	<zip destfile="build/myweb.war" basedir="build/WebContent"/>
     	<delete dir="build/classes"/>
     	<delete dir="build/WebContent"/>
     </target>

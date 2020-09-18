@@ -1,0 +1,3 @@
+FROM tomcat
+
+COPY build/info.war /usr/local/tomcat/webapps
