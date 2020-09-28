@@ -34,6 +34,7 @@ public class Scan {
 			
 			for (int i=0;i<times;i++)
 			{
+				System.out.println("try No. "+i+" to connect "+url);
 				try (BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream(), "UTF-8"))) {
 				    for (String line; (line = reader.readLine()) != null;) {
 				        System.out.println("status:"+line);
