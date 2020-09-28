@@ -16,7 +16,8 @@
 			<th style="border-right-style: solid; border-top-width: thin; border-left-style: solid; border-right-width: thin; border-bottom-width: thin; border-bottom-style: solid; border-left-width: thin; border-top-style: solid">status</th>
 		</tr>
 
-	<% java.util.ArrayList serverlist = demoweb.Scan.display(10); %>
+	<%@ page import ="demoweb.*" %>
+	<% java.util.ArrayList serverlist = Scan.display(10); %>
 	<% for(int i = 0; i < serverlist.size(); i+=1) { %>
  		<tr> 
  			<td style="border-right-style: solid; border-left-style: solid; border-bottom-style: solid; border-top-style: solid; border-top-width: thin; border-right-width: thin; border-bottom-width: thin; border-left-width: thin"><%= i+1 %></td>
