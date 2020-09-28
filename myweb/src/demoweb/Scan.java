@@ -10,13 +10,18 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class Scan {
+	public Scan()
+	{
+		
+	}
 
-	public static ArrayList display(int times)
+	public ArrayList display(int times)
 	{
 		
 		URL url;
 		//String status="initial";
 		ArrayList<String> status=new ArrayList();
+		System.out.println("scan time is "+times);
 		
 		try {
 			Map<String, String> env = System.getenv();

@@ -17,7 +17,7 @@
 		</tr>
 
 	<%@ page import ="demoweb.*" %>
-	<% java.util.ArrayList serverlist = Scan.display(10); %>
+	<% Scan scan=new Scan(); java.util.ArrayList serverlist = scan.display(10); %>
 	<% for(int i = 0; i < serverlist.size(); i+=1) { %>
  		<tr> 
  			<td style="border-right-style: solid; border-left-style: solid; border-bottom-style: solid; border-top-style: solid; border-top-width: thin; border-right-width: thin; border-bottom-width: thin; border-left-width: thin"><%= i+1 %></td>
