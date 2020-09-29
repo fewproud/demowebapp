@@ -28,9 +28,9 @@ public class Status extends HttpServlet {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		String hostname=java.net.InetAddress.getLocalHost().getHostName();
-		String info="myserver";
+
 		String status="version 1.0 stable";
-		response.getWriter().append(info + " "+ hostname + " "+status);
+		response.getWriter().append(hostname + " "+status);
 	
 	}
 

@@ -7,20 +7,23 @@ import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 public class Scan {
-	public Scan()
-	{
-		
-	}
+	private ArrayList<String> status=new ArrayList();
+	private ArrayList<String> pods=new ArrayList();
+	private ArrayList<String> nums=new ArrayList();
+	private HashMap map=new HashMap();
+	private int times;
 
-	public ArrayList display(int times)
+	public Scan(int times)
 	{
+		this.times=times;
 		
 		URL url;
 		//String status="initial";
-		ArrayList<String> status=new ArrayList();
 		System.out.println("v0.3 scan time is "+times);
 		
 		Map<String, String> env = System.getenv();
@@ -38,22 +41,6 @@ public class Scan {
 			
 		for (int i=0;i<times;i++)
 		{
-				/*
-				url = new URL(infurl);	
-				System.out.println("try No. "+i+" to connect "+url);
-				try (BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream(), "UTF-8"))) {
-				    for (String line; (line = reader.readLine()) != null;) {
-				        System.out.println("status:"+line);
-				        status.add(line);
-				    }
-				} catch (UnsupportedEncodingException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				*/
 
 			try {
 				ProcessBuilder processBuilder = new ProcessBuilder();
@@ -70,6 +57,13 @@ public class Scan {
 			        while ((line = reader.readLine()) != null) {
 			        	System.out.println(line);
 			            status.add(line);
+			            String pod=getPodName(line);
+			            Integer time=(Integer)map.get(pod); 
+			            if (time==null)
+			            {
+			            	time=new Integer(0);
+			            }
+			            map.put(pod,new Integer(time.intValue()+1));
 			        }
 	
 			    }
@@ -79,8 +73,42 @@ public class Scan {
 			}
 
 		}
-
 		
+		Iterator it=map.keySet().iterator();
+		
+		while (it.hasNext())
+		{
+			String pod=(String)it.next();
+			pods.add(pod);
+			Integer num=(Integer)map.get(pod);
+			nums.add(num.toString());
+		}
+
+	}
+	
+	private String getPodName(String line)
+	{
+		int pos=line.indexOf(" ");
+		if (pos<0)
+			return null;
+		else
+		{
+			return line.substring(0,pos);
+		}
+	}
+
+	public ArrayList getList()
+	{
 		return status;
+	}
+	
+	public ArrayList getPods()
+	{
+		return pods;
+	}
+	
+	public ArrayList getNums()
+	{
+		return nums;
 	}
 }

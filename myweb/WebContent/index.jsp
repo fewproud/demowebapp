@@ -17,7 +17,7 @@
 		</tr>
 
 	<%@ page import ="demoweb.*" %>
-	<% Scan scan=new Scan(); java.util.ArrayList serverlist = scan.display(10); %>
+	<% Scan scan=new Scan(10); java.util.ArrayList serverlist = scan.getList(); %>
 	<% for(int i = 0; i < serverlist.size(); i+=1) { %>
  		<tr> 
  			<td style="border-right-style: solid; border-left-style: solid; border-bottom-style: solid; border-top-style: solid; border-top-width: thin; border-right-width: thin; border-bottom-width: thin; border-left-width: thin"><%= i+1 %></td>
@@ -25,6 +25,16 @@
     	</tr>
     <% } %>
 	</table>
+	<p>
+	Summary
+	<% java.util.ArrayList pods=scan.getPods(); java.util.ArrayList nums=scan.getNums(); %>
+	<table>
+	<% for(int i = 0; i < pods.size(); i+=1) { %>
+	<tr>
+		<td style="border-right-style: solid; border-left-style: solid; border-bottom-style: solid; border-top-style: solid; border-top-width: thin; border-right-width: thin; border-bottom-width: thin; border-left-width: thin"><%=pods.get(i)%></td>
+		<td style="border-right-style: solid; border-left-style: solid; border-bottom-style: solid; border-top-style: solid; border-top-width: thin; border-right-width: thin; border-bottom-width: thin; border-left-width: thin"><%=nums.get(i)%></td>
+	</table>
+	<%}  %>
 
 </body>
 </html>
