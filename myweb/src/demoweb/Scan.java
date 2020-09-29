@@ -35,10 +35,11 @@ public class Scan {
 			{
 				System.out.println("found INFO_URL from the environment property, using the default one "+infurl);
 			}
-			url = new URL(infurl);			
+		
 			
 			for (int i=0;i<times;i++)
 			{
+				url = new URL(infurl);	
 				System.out.println("try No. "+i+" to connect "+url);
 				try (BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream(), "UTF-8"))) {
 				    for (String line; (line = reader.readLine()) != null;) {
