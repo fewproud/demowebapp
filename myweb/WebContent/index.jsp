@@ -7,7 +7,7 @@
 <title>this is the demo message board</title>
 </head>
 <body><h3>
-<p5>container list</p5>
+<p5>container list (v0.1)</p5>
  </h3>
 	<table style="width: 70%; border-right-style: solid; border-top-width: thin; border-left-style: solid; border-right-width: thin; border-bottom-width: thin; border-bottom-style: solid; border-left-width: thin; border-top-style: solid; position: relative; clip: rect(auto, auto, auto, auto)">
 		<tr>
