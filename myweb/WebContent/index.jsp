@@ -28,7 +28,7 @@
 	<p>
 	Summary
 	<% java.util.ArrayList pods=scan.getPods(); java.util.ArrayList nums=scan.getNums(); %>
-	<table>
+	<table style="width: 70%; border-right-style: solid; border-top-width: thin; border-left-style: solid; border-right-width: thin; border-bottom-width: thin; border-bottom-style: solid; border-left-width: thin; border-top-style: solid; position: relative; clip: rect(auto, auto, auto, auto)">
 	<% for(int i = 0; i < pods.size(); i+=1) { %>
 	<tr>
 		<td style="border-right-style: solid; border-left-style: solid; border-bottom-style: solid; border-top-style: solid; border-top-width: thin; border-right-width: thin; border-bottom-width: thin; border-left-width: thin"><%=pods.get(i)%></td>
