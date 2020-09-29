@@ -21,7 +21,7 @@ public class Scan {
 		URL url;
 		//String status="initial";
 		ArrayList<String> status=new ArrayList();
-		System.out.println("v0.1 scan time is "+times);
+		System.out.println("v0.2 scan time is "+times);
 		
 		try {
 			Map<String, String> env = System.getenv();
