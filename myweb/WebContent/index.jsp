@@ -39,8 +39,8 @@
 	<tr>
 		<td style="border-right-style: solid; border-left-style: solid; border-bottom-style: solid; border-top-style: solid; border-top-width: thin; border-right-width: thin; border-bottom-width: thin; border-left-width: thin"><%=pods.get(i)%></td>
 		<td style="border-right-style: solid; border-left-style: solid; border-bottom-style: solid; border-top-style: solid; border-top-width: thin; border-right-width: thin; border-bottom-width: thin; border-left-width: thin"><%=nums.get(i)%></td>
-	</table>
+	</tr>
 	<%}  %>
-
+	</table>
 </body>
 </html>
