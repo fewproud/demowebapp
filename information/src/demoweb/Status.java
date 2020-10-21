@@ -29,7 +29,7 @@ public class Status extends HttpServlet {
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		String hostname=java.net.InetAddress.getLocalHost().getHostName();
 
-		String status="version 1.0.1 stable";
+		String status="version 1.0.2 stable";
 		response.getWriter().append(hostname + " "+status);
 	
 	}
